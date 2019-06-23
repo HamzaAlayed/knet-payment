@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DeveloperH\\Knet\\KNetServiceProvider"
+                "DeveloperH\\Knet\\Providers\\KNetServiceProvider"
             ]
         }
     },

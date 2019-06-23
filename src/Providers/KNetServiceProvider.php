@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperH\KNet;
+namespace DeveloperH\Knet\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +23,6 @@ class KNetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
     }
 }
