@@ -3,7 +3,9 @@
     "description": "Laravel package for KNet integration",
     "type": "library",
     "require": {
-        "illuminate/routing": "^5.5"
+        "illuminate/routing": "^5.5",
+        "ext-openssl": "*",
+        "ext-json": "*"
     },
     "version": "0.1",
     "license": "MIT",
