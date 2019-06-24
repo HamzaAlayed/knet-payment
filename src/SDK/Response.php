@@ -9,7 +9,7 @@ use Config;
 class Response extends Client
 {
     /**
-     * @var \Request
+     * @var \Illuminate\Http\Request
      */
     private $request;
     private $result=[];

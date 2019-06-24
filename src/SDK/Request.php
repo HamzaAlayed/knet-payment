@@ -11,7 +11,7 @@ class Request extends Client
 
     public $params='';
 
-    function __construct()
+    public function __construct()
     {
         $this
             ->addParam('id', Config::get('knet.transport_id'))
@@ -23,12 +23,12 @@ class Request extends Client
             ->addParam('errorURL', Config::get('knet.error_url'));
     }
 
-    function addParam($key, $value){
+    public function addParam($key, $value){
         $this->params.="&{$key}={$value}";
         return $this;
     }
 
-    function url()
+    public function url()
     {
 
         $url=Config::get('knet.development_url');

@@ -2,8 +2,6 @@
 
 namespace DeveloperH\Knet\Providers;
 
-use DeveloperH\Knet\Facades\KNetClient;
-use DeveloperH\Knet\SDK\Client;
 use DeveloperH\Knet\Services\KNet;
 use Illuminate\Support\ServiceProvider;
 
