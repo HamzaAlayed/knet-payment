@@ -6,8 +6,8 @@ return [
     'transport_password'=>env('KENT_TRANSPORT_PASSWORD'),
     'response_url'=>url('/knet'),
     'error_url'=>url('/knet'),
-    'action_code'=>env('KENT_ACTION_CODE'),
+    'action_code'=>env('KENT_ACTION_CODE',1),
     'resource_key'=>env('KENT_RESOURCE_KEY'),
-    'language'=>env('KENT_LANGUAGE'),
-    'currency'=>env('KENT_CURRENCY'),
+    'language'=>env('KENT_LANGUAGE', 'USA'),
+    'currency'=>env('KENT_CURRENCY',414),
 ];

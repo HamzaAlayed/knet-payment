@@ -19,7 +19,10 @@
         "laravel": {
             "providers": [
                 "DeveloperH\\Knet\\Providers\\KNetServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "KNet": "DeveloperH\\Knet\\Facades\\KNetFacade"
+            }
         }
     },
     "autoload": {

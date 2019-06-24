@@ -2,6 +2,9 @@
 
 namespace DeveloperH\Knet\Providers;
 
+use DeveloperH\Knet\Facades\KNetClient;
+use DeveloperH\Knet\SDK\Client;
+use DeveloperH\Knet\Services\KNet;
 use Illuminate\Support\ServiceProvider;
 
 class KNetServiceProvider extends ServiceProvider
@@ -13,7 +16,10 @@ class KNetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('knet', function () {
+
+            return new KNet();
+        });
     }
 
     /**
@@ -36,4 +42,7 @@ class KNetServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
     }
+
+
+
 }

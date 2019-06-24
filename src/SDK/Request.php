@@ -6,7 +6,7 @@ namespace DeveloperH\Knet\SDK;
 
 use Config;
 
-class Request
+class Request extends Client
 {
 
     public $params='';
@@ -47,28 +47,5 @@ class Request
         return $url."?{$this->params}";
     }
 
-    function encryptAES($str, $key)
-    {
-        $str = $this->pkcs5_pad($str);
-        $encrypted = openssl_encrypt($str, 'AES-128-CBC', $key, OPENSSL_ZERO_PADDING, $key);
-        $encrypted = base64_decode($encrypted);
-        $encrypted = unpack('C*', ($encrypted));
-        $encrypted = $this->byteArray2Hex($encrypted);
-        $encrypted = urlencode($encrypted);
-        return $encrypted;
-    }
 
-    function pkcs5_pad($text)
-    {
-        $blocksize = 16;
-        $pad = $blocksize - (strlen($text) % $blocksize);
-        return $text . str_repeat(chr($pad), $pad);
-    }
-
-    function byteArray2Hex($byteArray)
-    {
-        $chars = array_map("chr", $byteArray);
-        $bin = join($chars);
-        return bin2hex($bin);
-    }
 }
