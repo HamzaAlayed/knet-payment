@@ -1,7 +1,7 @@
 <?php
 
 
-Route::post('knet/request', function(\Illuminate\Http\Request $request){
+Route::get('knet/request', function(\Illuminate\Http\Request $request){
     return
         KNet::request()
         ->addParam('amt', $request->get('amount'))
