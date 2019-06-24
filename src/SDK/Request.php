@@ -5,6 +5,7 @@ namespace DeveloperH\Knet\SDK;
 
 
 use Config;
+use DeveloperH\Knet\Exceptions\KnetExceptions;
 
 class Request extends Client
 {
@@ -13,6 +14,9 @@ class Request extends Client
 
     public function __construct()
     {
+        if (!Config::get('knet.resource_key',null)){
+            throw new KnetExceptions('No Resource Key');
+        }
         $this
             ->addParam('id', Config::get('knet.transport_id'))
             ->addParam('password', Config::get('knet.transport_password'))
