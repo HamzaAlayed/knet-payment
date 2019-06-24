@@ -48,7 +48,7 @@ class Request extends Client
             ->addParam('tranportalId', Config::get('knet.transport_id'))
             ->addParam('responseURL', Config::get('knet.response_url'))
             ->addParam('errorURL', Config::get('knet.error_url'));
-        return $url."?{$this->params}";
+        return $url."?".substr($this->params, 1);
     }
 
 
