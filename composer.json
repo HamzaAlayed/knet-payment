@@ -3,6 +3,7 @@
     "description": "Laravel package for KNet integration",
     "type": "library",
     "require": {
+        "php": "^7.2",
         "illuminate/routing": "^5.5",
         "ext-openssl": "*",
         "ext-json": "*"
