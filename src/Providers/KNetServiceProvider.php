@@ -15,7 +15,6 @@ class KNetServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('knet', function () {
-
             return new KNet();
         });
     }
@@ -36,11 +35,6 @@ class KNetServiceProvider extends ServiceProvider
         }
         $this->mergeConfigFrom(__DIR__.'/../../config/knet.php', 'knet-payment');
 
-
-
-        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
     }
-
-
-
 }

@@ -1,16 +1,11 @@
 <?php
 
-
-
 namespace  DeveloperH\Knet\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-
-
 /**
- * Class ShoppingCartFacade
- * @package LaraShout\ShoppingCart
+ * Class ShoppingCartFacade.
  */
 class KNetFacade extends Facade
 {
