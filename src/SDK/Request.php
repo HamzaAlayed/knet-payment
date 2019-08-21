@@ -1,20 +1,17 @@
 <?php
 
-
 namespace DeveloperH\Knet\SDK;
-
 
 use Config;
 use DeveloperH\Knet\Exceptions\KnetExceptions;
 
 class Request extends Client
 {
-
-    public $params='';
+    public $params = '';
 
     public function __construct()
     {
-        if (!Config::get('knet.resource_key',null)){
+        if (!Config::get('knet.resource_key', null)) {
             throw new KnetExceptions('No Resource Key');
         }
         $this
@@ -27,29 +24,29 @@ class Request extends Client
             ->addParam('errorURL', Config::get('knet.error_url'));
     }
 
-    public function addParam($key, $value){
-        $this->params.="&{$key}={$value}";
+    public function addParam($key, $value)
+    {
+        $this->params .= "&{$key}={$value}";
+
         return $this;
     }
 
     public function url()
     {
-
-        $url=Config::get('knet.development_url');
+        $url = Config::get('knet.development_url');
 
         if (strtolower(Config::get('app.env')) == 'production') {
-            $url= Config::get('knet.production_url');
+            $url = Config::get('knet.production_url');
         }
-        $encrypt=$this->encryptAES(substr($this->params, 1),Config::get('knet.resource_key'));
-        $this->params='';
+        $encrypt = $this->encryptAES(substr($this->params, 1), Config::get('knet.resource_key'));
+        $this->params = '';
         $this
             ->addParam('param', 'paymentInit')
             ->addParam('trandata', $encrypt)
             ->addParam('tranportalId', Config::get('knet.transport_id'))
             ->addParam('responseURL', Config::get('knet.response_url'))
             ->addParam('errorURL', Config::get('knet.error_url'));
-        return $url."?".substr($this->params, 1);
+
+        return $url.'?'.substr($this->params, 1);
     }
-
-
 }
