@@ -8,10 +8,17 @@
 Please add these env variable to you .env file and fill needed data
 
 KENT_PRODUCTION_URL=https://kpay.com.kw/kpg/PaymentHTTP.htm
+
 KENT_PRODUCTION_URL=https://kpaytest.com.kw/kpg/PaymentHTTP.htm
+
 KENT_TRANSPORT_ID=
+
 KENT_TRANSPORT_PASSWORD=
+
 KENT_ACTION_CODE=1
+
 KENT_RESOURCE_KEY=
+
 KENT_LANGUAGE=USA
+
 KENT_CURRENCY=414
